@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.3.min.js" ></script>
 
   <style>
 	html, body, #cont {
@@ -30,11 +32,24 @@
   <div class="row" style="height:20%">
 		<div class="col-xs-8 col-sm-8" style="background-color:lavender;height:100%">
 			<input type="text" placeholder="message">
+			<p></p>
 		</div>
 		<div class="col-xs-4 col-sm-4" style="background-color:lavenderblush;height:100%">
 			<button>Send</button>
 		</div>
   </div>
-</div>	
+</div>
+
+<script type="text/javascript">
+	console.log("script");
+	$(document).ready(function(){
+		$( "input" )
+  		.keyup(function() {
+    		var value = $( this ).val();
+    		$( "p" ).text( value );
+  		})
+  	.keyup();
+	})
+</script>	
 </body>
 </html>
