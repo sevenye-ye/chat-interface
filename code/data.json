@@ -1,0 +1,9 @@
+{
+	"messages":[
+		{"id":"1", "content":"hallo id 1", "date":"123456", "sender":"aaa", "ifowner":"false"},
+		{"id":"2", "content":"good id 2", "date":"123456", "sender":"bbb", "ifowner":"false"},
+		{"id":"3", "content":"well id 3", "date":"123456", "sender":"ccc", "ifowner":"false"}
+	]
+}
+
+
