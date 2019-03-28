@@ -17,24 +17,41 @@
 		html, body{
 			height: 100%;
 		}
+
+		textarea{
+			resize: none;
+		}
   </style>
 </head>
 
 <body>
 <div style="height: 80%; background-color: antiquewhite; position: relative;">
-	<div>display message</div>
-	<div style="height:auto; background-color: burlywood; position: absolute; bottom: 3%; right: 2%; padding: 1%">received message</div>
+	<div style="height:auto; background-color:cadetblue; position: absolute; top: 3%; left: 2%; padding: 1%">display message</div>
+	<div id="id_send_btn" style="height:auto; background-color: burlywood; position: absolute; bottom: 3%; right: 2%; padding: 1%"></div>
 </div>
 
 <div style="height:20%; background-color:azure; margin-top: 1%; padding-top: 1%">
 	<input type="text" placeholder="message" style="width:60%; height:30%; position: relative; left: 5%">
-	<button style="position:relative; left:8%; width: 15%; height: 30%;">Send</button>
+	<button id="btn" style="position:relative; left:8%; width: 15%; height: 30%;">Send</button>
+	<!-- <textarea name="" id="" cols="30" rows="10" style="width:60%; height:30%; position: relative; left: 5%"></textarea> -->
 </div>
 
 
 <script type="text/javascript">
-	$(document).ready(function(){
+	$(document).ready(function(){	
 
+		$("#btn").click(function(){	
+			var value = $("input").val();							
+			attendMessageToDiv(value);
+			console.log(value);
+			$("input").val('');
+		});	
+
+		function attendMessageToDiv(value){				
+			$("#id_send_btn").append('<p>' + value + '</p>');		
+			$("p").css('background-color','#FFCC00');	
+			$("p").css('padding','10px');
+		};
 	})
 
 </script>	
