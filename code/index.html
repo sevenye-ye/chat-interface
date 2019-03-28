@@ -27,13 +27,15 @@
 <body>
 <div style="height: 80%; background-color: antiquewhite; position: relative;">
 	<div style="height:auto; background-color:cadetblue; position: absolute; top: 3%; left: 2%; padding: 1%">display message</div>
-	<div id="id_send_btn" style="height:auto; background-color: burlywood; position: absolute; bottom: 3%; right: 2%; padding: 1%"></div>
+	<div style="height:auto; background-color: burlywood; position: absolute; bottom: 3%; right: 2%; padding: 1%">
+		<div id="id_send_msg" style="background-color:#FFCC00; margin-bottom: 10px"></div>
+	</div>
 </div>
 
 <div style="height:20%; background-color:azure; margin-top: 1%; padding-top: 1%">
 	<input type="text" placeholder="message" style="width:60%; height:30%; position: relative; left: 5%">
+	<!-- <textarea name="" id="textfield" cols="30" rows="10" style="width:50%; height:30%; position: relative; left: 5%;"></textarea> -->
 	<button id="btn" style="position:relative; left:8%; width: 15%; height: 30%;">Send</button>
-	<!-- <textarea name="" id="" cols="30" rows="10" style="width:60%; height:30%; position: relative; left: 5%"></textarea> -->
 </div>
 
 
@@ -41,16 +43,20 @@
 	$(document).ready(function(){	
 
 		$("#btn").click(function(){	
-			var value = $("input").val();							
-			attendMessageToDiv(value);
-			console.log(value);
+			var value = $("input").val();
+			var d = new Date();
+			var now = d.toDateString();						
+			attendMessageToDiv(value, now);
+			console.log(now);
 			$("input").val('');
 		});	
 
-		function attendMessageToDiv(value){				
-			$("#id_send_btn").append('<p>' + value + '</p>');		
-			$("p").css('background-color','#FFCC00');	
-			$("p").css('padding','10px');
+		function attendMessageToDiv(value, now){				
+			// $("#id_send_msg").append('<p>' + value + '<br>' + now + '</p>');	
+			// $("#p_msg").css('background-color','#FFCC00');
+
+			$("#id_send_msg").append('<p">' + value + '</p>');
+			$("#id_send_msg").append('<p>' + now + '</p>');		
 		};
 	})
 
