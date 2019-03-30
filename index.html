@@ -25,9 +25,20 @@
 </head>
 
 <body>
-<div id="div_display_msg" style="background-color:antiquewhite; height: 80%; padding: 1%">
-	<div id="div_msg" style="background-color:rgb(156, 159, 192); display: inline-block; padding: 20px; margin-bottom:0.5%; margin-top:0.5%; ">display message</div><br>
-	<div style="background-color:rgb(156, 159, 192); display: inline-block; padding: 20px; margin-bottom:0.5%; margin-top:0.5%;">display message</div>
+<div id="div_display_msg" style="background-color:#FAF3E6; height: 80%; padding: 1% 1% 1% 1%">
+	<div id="div_msg" style="background-color:antiquewhite; display: inline-block; padding: 20px 20px 5px 20px; margin-bottom:0.5%; margin-top:0.5%; ">
+		<p style="text-align: left">message Sat Mar 30 2019 sjlfjdjfsjdfldsjfljfl</p>
+		<p style="text-align: right; margin-top: 30px"><font face="verdana" size="2" color="#585D7A">Sat Mar 30 2019</font></p>
+	</div><br>
+	<div style="background-color:rgb(156, 159, 192); display: inline-block; padding: 20px; margin-bottom:0.5%; margin-top:0.5%;">display message</div><br>
+	
+
+	<div style="background-color:rgb(156, 159, 192); display: block; float: right; padding: 20px; margin-bottom:0.5%; margin-top:0.5%;">		
+		<p>display message on right</p>
+	</div>
+
+
+
 </div>
 <div style="background-color:azure; height: 20%; margin-top: 1%">
 	<input type="text" placeholder="message" style="width:60%; height:30%; position: relative; left: 8%; top: 20%">
@@ -35,7 +46,7 @@
 </div>
 
 <script type="text/javascript">
-	$(document).ready(function(){	
+	$(document).ready(function(){
 
 		$("#btn").click(function(){	
 			var value = $("input").val();
