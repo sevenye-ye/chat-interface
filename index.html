@@ -32,23 +32,41 @@
 		<p style="text-align: left">message Sat Mar 30 2019 sjlfjdjfsjdfldsjfljfl</p>
 		<p style="text-align: right; margin-top: 30px"><font face="verdana" size="2" color="#585D7A">Sat Mar 30 2019</font></p>
 	</div><br>
-	<div style="background-color:antiquewhite; display: inline-block; padding: 20px; margin-bottom:0.5%; margin-top:0.5%;">		
+	<div style="background-color:rgb(86, 105, 156); display: inline-block; padding: 20px; margin-bottom:0.5%; margin-top:0.5%;">		
 		<p style="text-align: left">message Sat Mar 30 2019 sjlfjdjfsjdfldsjfljfl</p>
 		<p style="text-align: right; margin-top: 30px"><font face="verdana" size="2" color="#585D7A">Sat Mar 30 2019</font></p>
 	</div><br>
 
-	<div style="height:auto; min-height: 120px; margin-top:0.5%;background-color: brown">
+	<div style="height:auto; min-height: 120px; margin-top: 0.5%; margin-bottom:-0.5%; background-color: brown">
 		<div style="background-color:rgb(156, 159, 192); display: block; padding: 20px; float: right">		
-			<p style="text-align: left">message Sat Mar 30 2019 sjlfjdjfsjdfldsjfljfl</p>
+			<p style="">message Sat Mar 30 2019 sjlfjdjfsjdfldsjfljfl</p>
 			<p style="text-align: right; margin-top: 30px"><font face="verdana" size="2" color="#585D7A">Sat Mar 30 2019</font></p>
 		</div>
 	</div><br>
 
-	<div style="background-color:antiquewhite; display: inline-block; padding: 20px; margin-bottom:0.5%; margin-top:0.5%;">		
+	<div style="background-color:rgb(86, 105, 156); display: inline-block; padding: 20px; margin-bottom:0.5%; margin-top:0.5%;">		
 		<p style="text-align: left">message Sat Mar 30 2019 sjlfjdjfsjdfldsjfljfl</p>
 		<p style="text-align: right; margin-top: 30px"><font face="verdana" size="2" color="#585D7A">Sat Mar 30 2019</font></p>
 	</div><br>
+
+	<div style="height:auto; min-height: 120px; margin-top: 0.5%; margin-bottom:-0.5%; background-color: brown">
+		<div style="background-color:rgb(156, 159, 192); display: block; padding: 20px; float: right">		
+			<p style="">message Sat Mar 30 2019 sjlfjdjfsjdfldsjfljfl</p>
+			<p style="text-align: right; margin-top: 30px"><font face="verdana" size="2" color="#585D7A">Sat Mar 30 2019</font></p>
+		</div>
+	</div><br>
+
+	<div style="height:auto; min-height: 120px; margin-top: 0.5%; margin-bottom:-0.5%; background-color: brown">
+		<div style="background-color:rgb(156, 159, 192); display: block; padding: 20px; float: right">		
+			<p style="">message Sat Mar 30 2019 sjlfjdjfsjdfldsjfljfl</p>
+			<p style="text-align: right; margin-top: 30px"><font face="verdana" size="2" color="#585D7A">Sat Mar 30 2019</font></p>
+		</div>
+	</div><br>
+
+
 </div>
+
+
 <div style="background-color:azure; height: 20%; margin-top: 1%">
 	<input type="text" placeholder="message" style="width:60%; height:30%; margin-top: 3%; margin-left: 5%">
 	<button id="btn" style="width:10%; height:30%; margin-top: 3%; margin-left: 5%">Send</button>
@@ -63,23 +81,52 @@
 			var now = d.toDateString();	
 
 			attendMessageToDiv(value, now);
-			console.log(now);
 
 			$("input").val('');
+
+			//getIdfromDate();
+
 		});	
 
-		function attendMessageToDiv(value, now){				
+		function attendMessageToDiv(value, now){
+			var id = "#" + getIdfromDate();			
 
-			//$("#div_display_msg").append('<div id="' + now + '">' + value + '</div>');
-			$("#div_display_msg").append('<div id=1>' + value + '</div>');
-			// $("#1").css({"background-color":"red"});
-			//$("#div_display_msg").append(value);
+			$("#div_display_msg").append('<div id='+ getIdfromDate() +'>' + '</div><br>');
+			$(id).css({"background-color":"rgb(156, 159, 192)"});
+			$(id).css({"min-height":"120px"});
+			$(id).css({"display":"inline-block"});
+			$(id).css({"padding":"20px"});
+			$(id).css({"height":"auto"});
+			$(id).css({"margin-top":"0.5%"});
+			$(id).css({"margin-bottom":"0.5%"});
 
-			var id = "#" + 1;
-			console.log(id);
-			$(id).css({"background-color":"red"});
+			var id_msg = id + "msg";
+			var id_date = id + "date";
+
+			$(id).append('<p id='+ id_msg +'>' + value + '</p>');
+			$(id).append('<p id='+ id_date + '>'+ '<font face="verdana" size="2" color="#585D7A">'+ now + '</p>');
+			//$(id_date).css({"margin-top":"30px"});
+	
+			
+
+			console.log("id : " + id);
+			console.log("id_msg : " + id_msg);	
+			console.log("id_date : " + id_date);		
 								
 		};
+
+		function getIdfromDate(){
+			var d = new Date();
+			var id = "";	
+			var d_year = d.getFullYear();
+			var d_month = d.getMonth();
+			var d_day = d.getDay();
+			var d_hour = d.getHours();
+			var d_minute = d.getHours();
+			var d_second = d.getSeconds();
+			//console.log("id : " + id);
+			return id = id + d_year + d_month + d_day + d_hour + d_minute + d_second;	
+		}
 	})
 </script>	
 </body>
