@@ -1,42 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <title>Chat interface</title>
-  <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
-	<!-- ########## jQuery ########## -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style>
 
-	<!-- ########## jQuery UI ########## -->
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+#dsp_msg {
+    width: 100%;
+}
 
-  <style>
-		html, body{
-			height: 100%;
-		}
-  </style>
+#dsp_msg div {
+    float: left;
+    display: inline-block;
+    background-color: red;
+}
+
+#dsp_msg div:first-child {
+    float: right;
+    width: auto;
+    background-color: yellow;
+}
+
+#dsp_msg div:last-child {
+    width: 25px;
+    background-color: #00f;
+    float: right;
+}
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+});
+</script>
 </head>
-
 <body>
-<div style="height: 80%; background-color: antiquewhite; position: relative;">
-	<div>display message</div>
-	<div style="height:auto; background-color: burlywood; position: absolute; bottom: 3%; right: 2%; padding: 1%">received message</div>
+
+<div id="dsp_msg">
+    <div>1</div>
+    <div>This is the second and middle div.</div>
+    <div>3</div>
 </div>
 
-<div style="height:20%; background-color:azure; margin-top: 1%; padding-top: 1%">
-	<input type="text" placeholder="message" style="width:60%; height:30%; position: relative; left: 5%">
-	<button style="position:relative; left:8%; width: 15%; height: 30%;">Send</button>
-</div>
-
-
-<script type="text/javascript">
-	$(document).ready(function(){
-
-	})
-
-</script>	
 </body>
 </html>
